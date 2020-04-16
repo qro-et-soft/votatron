@@ -68,3 +68,5 @@ yarn-debug.log*
 
 # Ignore build up until deploy
 build/
+
+.idea
