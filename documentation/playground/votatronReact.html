@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="minimum-scale=1.0, width=device-width, maximum-scale=1.0, user-scalable=no"/>
+    <meta charset="utf-8">
+    <style media="screen">
+        /* how to include a font your own */
+        /*@font-face {
+        font-family: Lato;
+        src: url(src/fonts/Lato-Regular.ttf);
+        color:lightblue; 
+        }
+
+        @font-face {
+        font-family: Lato;
+        src: url(src/fonts/Lato-Bold.ttf);
+        font-weight: bold;
+        color:lightblue;
+        }
+
+        * {
+        font-family: Lato;
+        color:lightblue;
+        }*/
+
+        #container1 {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        #container1>div {
+            height: 5em;
+            width: 5em;
+            background-color: purple;
+        }
+
+        body {
+            color:lightblue;
+            /* React like */
+            font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
+            /*font-family:source-code-pro,Menlo,Monaco,Consolas,Courier New,monospace;*/
+            max-width: 650px;
+            margin: 0 auto;
+            padding: 0 15px;
+            background-color: lightblue;
+            background-color: black;
+        }
+
+        figure {
+            margin: 0;
+        }
+    </style>
+    <title>React & Redux & Firebase</title>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+    <script type="text/javascript" src="src/js/variables.js"></script>
+    <script type="text/javascript" src="src/js/functions.js"></script>
+    <script type="text/javascript" src="src/js/objects.js"></script>
+</head>
+<body>
+    <h1>votaTronnie building Blocks</h1>
+    <h2>Introducing <b>React</b></h2>
+    <div id="create_button_container">this component will be created by react</div>
+    <div id="rooten">this too</div>
+
+    <h2>Media inn</h2>
+    <h3>Audio</h3>
+    <figure>
+        <figcaption>Add audio by <code>audio</code> html element:</figcaption>
+        <audio controls src="src/media/nightMaresWax21Kong.mp3">
+            Your browser does not support <code>audio</code> element.
+        </audio>
+    </figure>
+
+    <h3>Video</h3>
+    <video controls width="560">
+        <source src="src/media/deftTesla.mp4" type="video/mp4">
+        Your browser doesn't support embedded videos.
+    </video>
+
+    <h3>Video by <code>iframe</code></h3>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/dpw9EHDh2bM"
+        frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+    </iframe>
+
+        <!--<script type="text/babel">
+        console.log(`${lastName}, is the ${firstName} duce ${middleName}`)
+        console.log(bread, meat, toppings[1]);
+        console.log(`${regularPerson.firstname} of Canterbury`)
+        document.body.innerHTML =
+        `
+        <body>
+            <div id="container1"></div>
+        <head>
+            <h1>React! but <b>REACT NOW!</b></h1>
+        </head>
+            <article background-color="purple">
+                <h2>${article.title}</h2>
+                <div>	${article.title} means that ${article.body}</div>
+                <div>	${article.benefits}</div>
+                <div>	${article.steepCurve}</div>
+                <div>	${article.fatigue}</div>
+                <div>	${article.tools}</div>
+                <div>	<b>${article.pros}</b></div>
+            </article>        
+            <div id="root">this is my hell-o!</div>
+            Hello ${firstName},<br>
+            Thanks for ordering ${qty} tickets to ${event}.
+            <h2>${article.body}</h2>
+            <div><h3>Function expansion and operators use</h3>
+            Order Details:<br>
+            ${firstName} ${middleName} ${lastName}<br>
+            ${qty} x $${price} = $${qty*price} to ${event}<br>
+            You can pick your tickets up at will call 30 minutes before the show.
+            </div>
+            Thanks, ${ticketAgent}.<br>
+            <a href="https://nohaciaelsur.wordpress.com/" title="the repo of my stuff" target="_blank"
+            >Let's do go nohaciaelsur</a> so called the the repo of my stuff.
+            <div><h3>Default function arguments use</h3>
+            <b>${logActivity("Alle XXX", "cures")}!</b>
+            ${logActivity()}</div>
+            ${printered()} this is the printered() function working wonders, check the format/render
+            of white space.
+            <div><h3>HOW TO: using an ARROW function</h3>
+            ${arrowFunction()}<br>
+            ${arrowFunction("setA to what i need", "setB on this too")}<br>
+            ${arrowFunction("setA to what i need", 42)}<br>
+            ${arrowFunction(42)}<br> the answer is fourty2<br><br></div>
+            <div>${article.dom}</div>
+            <div>${forms.body}</div>
+            <div><h2>Media inn</h2>
+            <p>ToDo: controls audio</p>
+            <button onclick="playAudio()">Play Audio</button></div>
+            
+            <footer>
+            <p style="font-size:15px; font-family:"Courier New"; color:grey">
+            ${article.foot}<br><br>
+            copyLeft FSF | The <b>INformation</b> worth spread ${spdxBeerWare}<br>
+            ${new Date()}<p>
+            </footer>
+            <p style="font-size:20px; color:purple">1 ${inProgress}</p>
+
+
+            https://reactjs.org/docs/dom-elements.html
+            
+
+
+
+
+            <p style="font-size:20px; color:violet">0 ${inProgress}</p>
+        <div>
+            <ol><b style="font-size:35px">ToDo</b>
+                <li>Loop through all attributes of an <img> element and output each attribute's name and value:<br>
+                <pre>
+                var x = document.getElementById("myImg");
+                var txt = "";
+                var i;
+                for (i = 0; i < x.attributes.length; i++) {
+                    txt = txt + x.attributes[i].name + " = " + x.attributes[i].value + &ltbr&gt;
+                }
+                </pre></li>
+                <li>components</li>
+                <li>hooks</li>
+                <li>promises</li>
+                <li>redux<br></li>
+                <li>graphQL</li>
+                <li>firebase</li>
+            </ol>
+        </div>
+        </body>
+        `
+        // FIXME why cannot move this code to src/*js
+        var container = document.getElementById('container1');
+        for (let i = 1; i < 5; i++) {
+            div = document.createElement('div') 
+            div.onclick = function() {
+                alert('This is box #' + i)
+            }
+            container.appendChild(div)
+        }
+        
+
+        //for (let i = 0; i < headers.lenght; i++) { 
+        //   const headers1 = document.getElementsByTagName("h1");
+        //    alert('h1 = ' + headers1.length);
+        //    const headers2 = document.getElementsByTagName("h2");
+        //    alert('h2 = ' + headers2.length);
+        //    const headers3 = document.getElementsByTagName("h3");
+        //    alert('h3 = ' + headers3.length);
+        //    const headers4 = document.getElementsByTagName("h4");
+        //    alert('h4 = ' + headers4.length);
+        //}
+    </script> -->
+    <!-- Load React. -->
+    <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+    <script  type="text/javascript" src="https://unpkg.com/react@16/umd/react.development.js" crossorigin="anonymous"></script>
+    <script  type="text/javascript" src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin="anonymous"></script>
+    <!-- Load React component. -->
+    <script  type="text/javascript" src="src/react/react_button.js"></script>
+    <script  type="text/javascript" src="src/react/domRender.js"></script>
+</body>
+</html>
