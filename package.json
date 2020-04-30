@@ -35,15 +35,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/creativetimofficial/material-dashboard-react.git"
+    "url": "git+https://github.com/qro-et-soft/votatron.git"
   },
   "keywords": [],
-  "author": "Creative Tim <hello@creative-tim.com> (https://www.creative-tim.com/)",
+  "author": "etSoft Qrock!",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/creativetimofficial/material-dashboard-react/issues"
+    "url": "https://etsoft/votatron/issues"
   },
-  "homepage": "https://creativetimofficial.github.io/material-dashboard-react/#/dashboard",
+  "homepage": "https://etsoft/votatron/#/dashboard",
   "optionalDependencies": {
     "@types/googlemaps": "3.37.3",
     "@types/markerclustererplus": "2.1.33",
