@@ -10,6 +10,8 @@ import CardHeader from "components/Card/CardHeader.js";
 import CardBody from "components/Card/CardBody.js";
 import { useCollection } from 'react-firebase-hooks/firestore';
 import firebase from "firebase";
+import ProjectForm from "components/Projects/ProjectForm"
+
 
 const styles = {
   cardCategoryWhite: {
@@ -50,10 +52,19 @@ export default function ProjectList() {
       snapshotListenOptions: { includeMetadataChanges: true },
     }
   );
+
+  const convertedData = () => {
+    return data.docs.map(doc => {
+      const { name, description, comments, status, votes } = doc.data();
+      return [name, description, comments, status, votes ];
+    });
+  }
+
   const classes = useStyles();
   return (
     <GridContainer>
       <GridItem xs={12} sm={12} md={12}>
+        <ProjectForm/>
         <Card>
           <CardHeader color="primary">
             <h4 className={classes.cardTitleWhite}>Projects</h4>
@@ -62,16 +73,12 @@ export default function ProjectList() {
             </p>
           </CardHeader>
           <CardBody>
-            {data && data.docs.map(doc => (
-              <React.Fragment key={doc.id}>
-                {JSON.stringify(doc.data())},{' '}
-              </React.Fragment>
-            ))}
+            {loading ? <p>Loading ...</p> :
             <Table
               tableHeaderColor="primary"
-              tableHead={["Name", "Description", "Status", "Comments", "Votes"]}
-              tableData={loading ? [] : []}
-            />
+              tableHead={["name", "description", "comments", "status", "votes"]}
+              tableData={data ? convertedData() : []}
+            />}
           </CardBody>
         </Card>
       </GridItem>

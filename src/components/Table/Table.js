@@ -39,6 +39,7 @@ export default function CustomTable(props) {
             return (
               <TableRow key={key} className={classes.tableBodyRow}>
                 {prop.map((prop, key) => {
+                  console.log(prop);
                   return (
                     <TableCell className={classes.tableCell} key={key}>
                       {prop}
