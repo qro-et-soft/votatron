@@ -8,8 +8,9 @@ const firebaseConfig = {
   storageBucket: "votatron-1b49d.appspot.com",
   messagingSenderId: "162937967391",
   appId: "1:162937967391:web:af16f82b2abd8f24f6962a",
-  measurementId: "G-3705LHC6MM"
+  measurementId: "G-3705LHC6MM",
 };
-firebase.initializeApp(firebaseConfig);
 
-export  { firebaseConfig };
+const defaultProject = firebase.initializeApp(firebaseConfig);
+
+export { defaultProject };

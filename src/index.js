@@ -2,8 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { createBrowserHistory } from "history";
 import { Router, Route, Switch, Redirect } from "react-router-dom";
-import firebase from "firebase";
-import { firebaseConfig } from "./config/firebase";
+import { defaultProject } from "./config/firebase";
 
 // core components
 import Admin from "layouts/Admin.js";
