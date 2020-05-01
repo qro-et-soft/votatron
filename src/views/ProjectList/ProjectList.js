@@ -52,6 +52,14 @@ export default function ProjectList() {
       snapshotListenOptions: { includeMetadataChanges: true },
     }
   );
+
+  const convertedData = () => {
+    return data.docs.map(doc => {
+      const { name, description, comments, status, votes } = doc.data();
+      return [name, description, comments, status, votes ];
+    });
+  }
+
   const classes = useStyles();
   return (
     <GridContainer>
@@ -65,16 +73,11 @@ export default function ProjectList() {
             </p>
           </CardHeader>
           <CardBody>
-            {data && data.docs.map(doc => (
-              <React.Fragment key={doc.id}>
-                {JSON.stringify(doc.data())},{' '}
-              </React.Fragment>
-            ))}
             {loading ? <p>Loading ...</p> :
             <Table
               tableHeaderColor="primary"
-              tableHead={["name", "description", "comments"]}
-              tableData={[ data.docs.map(doc => doc.data())]}
+              tableHead={["name", "description", "comments", "status", "votes"]}
+              tableData={data ? convertedData() : []}
             />}
           </CardBody>
         </Card>

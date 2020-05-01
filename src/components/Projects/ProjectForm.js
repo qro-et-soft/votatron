@@ -13,13 +13,14 @@ const ProjectForm = () => {
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
   const [comments, setComments] = useState('');
+  const [status, setStatus] = useState('');
 
   const onSubmit = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     firebase.firestore().collection('Project').add(
-      {name: name, description: description, comments: comments })
+      {name: name, description: description, comments: comments, status: status })
       .then( async documentReference => {
-        console.log('document reference ID', documentReference.id)
+        console.log('document reference ID', documentReference.id);
       })
       .catch(error => {
         console.log(error.message)
@@ -35,11 +36,12 @@ const ProjectForm = () => {
       <br/>
       <label>Comments</label>
       <textarea onChange={(event => setComments(event.target.value))}/>
+      <label>Status</label>
+      <textarea onChange={(event => setStatus(event.target.value))}/>
       <br/>
       <input type="submit" value="Submit project"/>
     </form>
   )
 }
-
 
 export default ProjectForm;
