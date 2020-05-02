@@ -11,10 +11,10 @@ import RTL from "layouts/RTL.js";
 
 import "assets/css/material-dashboard-react.css?v=1.8.0";
 
-const hist = createBrowserHistory();
+firebase.initializeApp(firebaseConfig);
 
 ReactDOM.render(
-  <Router history={hist}>
+  <Router history={createBrowserHistory()}>
     <Switch>
       <Route path="/admin" component={Admin} />
       <Route path="/rtl" component={RTL} />
@@ -23,3 +23,4 @@ ReactDOM.render(
   </Router>,
   document.getElementById("root")
 );
+
