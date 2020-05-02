@@ -1,5 +1,3 @@
-import firebase from "firebase";
-
 const firebaseConfig = {
   apiKey:  process.env.FIREBASE_API_KEY,
   authDomain: "votatron-1b49d.firebaseapp.com",
@@ -11,6 +9,5 @@ const firebaseConfig = {
   measurementId: "G-3705LHC6MM",
 };
 
-const defaultProject = firebase.initializeApp(firebaseConfig);
 
-export { defaultProject };
+export { firebaseConfig };
