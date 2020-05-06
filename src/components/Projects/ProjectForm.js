@@ -16,6 +16,7 @@ const ProjectForm = () => {
   const [status, setStatus] = useState('');
 
   const onSubmit = (e) => {
+    If (name.length >= 6 && description.length >= 10)
     e.preventDefault();
     firebase.firestore().collection('Project').add(
       {name: name, description: description, comments: comments, status: status })
