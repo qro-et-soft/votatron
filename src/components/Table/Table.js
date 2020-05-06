@@ -35,9 +35,10 @@ export default function CustomTable(props) {
           </TableHead>
         ) : null}
         <TableBody>
-          {tableData.map((prop, key) => {
-            return (
-              <TableRow key={key} className={classes.tableBodyRow}>
+        {tableData.map((prop, key) => {
+          return (
+            <TableRow key={key} className={classes.tableBodyRow}>
+            <input type="submit" value="Vote"/>
                 {prop.map((prop, key) => {
                   console.log(prop);
                   return (
