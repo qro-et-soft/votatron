@@ -16,8 +16,8 @@ const ProjectForm = () => {
   const [status, setStatus] = useState('');
 
   const onSubmit = (e) => {
-    If (name.length >= 6 && description.length >= 10)
     e.preventDefault();
+    if (name.length >= 6 && description.length >= 10 ){
     firebase.firestore().collection('Project').add(
       {name: name, description: description, comments: comments, status: status })
       .then( async documentReference => {
@@ -26,18 +26,19 @@ const ProjectForm = () => {
       .catch(error => {
         console.log(error.message)
       })
+    }
   }
   return (
     <form onSubmit={onSubmit} className="form">
-      <label>Project Name</label>
-      <input type="text" required onChange={(event => setName(event.target.value))}/>
+      <label>Project Name </label>
+      <input type="text" required onChange={(event => setName(event.target.value))} minlength="4" maxlength="30" size="30"/>
       <br/>
-      <label>Description</label>
-      <textarea  onChange={(event => setDescription(event.target.value))}/>
+      <label>Description </label>
+      <textarea  onChange={(event => setDescription(event.target.value))} minlength="4" maxlength="50" size="50"/>
       <br/>
-      <label>Comments</label>
+      <label>Comments </label>
       <textarea onChange={(event => setComments(event.target.value))}/>
-      <label>Status</label>
+      <label> Status </label>
       <textarea onChange={(event => setStatus(event.target.value))}/>
       <br/>
       <input type="submit" value="Submit project"/>
