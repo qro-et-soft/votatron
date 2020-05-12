@@ -17,23 +17,32 @@ const ProjectForm = () => {
     const [status, setStatus] = useState('');
     
     const Status_List = ["New", "In Progress", "Test", "Canceled", "Implemented"];
+    const Dropdownlist = () => {
+      return (
+      <label>
+      <FirstDropdown />
+      <SecondDropdown />
+      <ThirdDropdown />
+      </label>
+      )
+    }
   }
-
+  
   const onSubmit = (e) => {
     e.preventDefault();
     if (name.length >= 4 && description.length >= 4 ){
       firebase.firestore().collection('Project').add(
         {name: name, description: description, comments: comments, status: status })
-      .then( async documentReference => {
+        .then( async documentReference => {
         console.log('document reference ID', documentReference.id);
       })
       .catch(error => {
         console.log(error.message)
       })
     }
-  
-  return (
-    <form onSubmit={onSubmit} className="form">
+    
+    return (
+      <form onSubmit={onSubmit} className="form">
       <label>Project Name </label>
       <input type="text" required onChange={(event => setName(event.target.value))} minlength="4" maxlength="30" size="30"/>
       <br/>
@@ -44,13 +53,13 @@ const ProjectForm = () => {
       <textarea onChange={(event => setComments(event.target.value))}/>
       <br/>
 
-        const Component = () => {
-          const [status, statusDropdown ] = useDropdown(" Status List ", " ", Status_List);
-            
+      const Component = () => {
+          const [status, statusDropdown ] = useDropdown(" Status List ", " ", Status_List);          
               return (
               <statusDropdown onChange={(event => setStatus(event.target.value))}/>    
               )
-        }
+      }
+      
 
       <br/>
       <input type="submit" value="Submit project"/>
