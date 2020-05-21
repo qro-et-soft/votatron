@@ -40,7 +40,7 @@ const ProjectForm = () => {
       <textarea onChange={(event => setComments(event.target.value))}/>
       <br/>
       <label>Status: </label>
-       <select
+       <select selected value={"New"}
           onChange={(event => setStatus(event.target.value))}>
             <option value={"New"}>New</option>
             <option value={"In Progress"}>In Progress</option>
