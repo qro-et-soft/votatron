@@ -12,8 +12,8 @@ const ProjectForm = () => {
 
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
-  const [comments, setComments] = useState('New');
-  const [status, setStatus] = useState('');
+  const [comments, setComments] = useState('');
+  const [status, setStatus] = useState('New');
 
   const onSubmit = (e) => {
     if (name.length >= 4 && description.length >= 4 ){
@@ -32,23 +32,23 @@ const ProjectForm = () => {
     <form onSubmit={onSubmit} className="form">
       <label>Project Name: </label>
       <input type="text" required onChange={(event => setName(event.target.value))} minlength="4" maxlength="30" size="30"/>
-        <br/>
-        <label>Description: </label>
+        {/* <br/> */}
+        <label> Description: </label>
         <textarea  onChange={(event => setDescription(event.target.value))} minlength="4" maxlength="50" size="50"/>
-        <br/>
-      <label>Comments: </label>
+        {/* <br/> */}
+      <label> Comments: </label>
       <textarea onChange={(event => setComments(event.target.value))}/>
-      <br/>
-      <label>Status: </label>
-      <select selected value={"New"}
+      {/* <br/> */}
+      <label> Status: </label>
+      <select name={setStatus}
         onChange={(event => setStatus(event.target.value))}>
-          <option value={"New"}>New</option>
-          <option value={"In Progress"}>In Progress</option>
+          <option selected value={"New"}>New</option>
+          <option selected value={"In Progress"}>In Progress</option>
           <option value={"Test"}>Test</option>
           <option value={"Implemented"}>Implemented</option>
           <option value={"Canceled"}>Canceled</option>
       </select>
-      <br/>
+      {/* <br/> */}
       <input type="submit" value="Submit project"/>
     </form>
   )
