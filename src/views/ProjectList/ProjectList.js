@@ -76,7 +76,7 @@ export default function ProjectList() {
             {loading ? <p>Loading ...</p> :
             <Table
               tableHeaderColor="primary"
-              tableHead={["name", "description", "comments", "status", "votes"]}
+              tableHead={["", "Name", "Description", "Comments", "Status", "Votes"]}
               tableData={data ? convertedData() : []}
             />}
           </CardBody>
