@@ -1,13 +1,12 @@
 const firebaseConfig = {
-  apiKey:  process.env.FIREBASE_API_KEY,
-  authDomain: "votatron-1b49d.firebaseapp.com",
-  databaseURL: "https://votatron-1b49d.firebaseio.com",
-  projectId: "votatron-1b49d",
-  storageBucket: "votatron-1b49d.appspot.com",
-  messagingSenderId: "162937967391",
-  appId: "1:162937967391:web:af16f82b2abd8f24f6962a",
-  measurementId: "G-3705LHC6MM",
+  apiKey: "AIzaSyAmI0O67nEs4ovHMDjxFUOxoZm0zfd75Ng",
+  authDomain: "votatron-4l3x.firebaseapp.com",
+  databaseURL: "https://votatron-4l3x.firebaseio.com",
+  projectId: "votatron-4l3x",
+  storageBucket: "votatron-4l3x.appspot.com",
+  messagingSenderId: "3359001660",
+  appId: "1:3359001660:web:d99665ba6163c22ea88739",
+  measurementId: "G-0W70MJ48CQ"
 };
-
 
 export { firebaseConfig };
