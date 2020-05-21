@@ -12,7 +12,7 @@ const ProjectForm = () => {
 
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
-  const [comments, setComments] = useState('');
+  const [comments, setComments] = useState('New');
   const [status, setStatus] = useState('');
 
   const onSubmit = (e) => {
@@ -40,15 +40,15 @@ const ProjectForm = () => {
       <textarea onChange={(event => setComments(event.target.value))}/>
       <br/>
       <label>Status: </label>
-       <select selected value={"New"}
-          onChange={(event => setStatus(event.target.value))}>
-            <option value={"New"}>New</option>
-            <option value={"In Progress"}>In Progress</option>
-            <option value={"Test"}>Test</option>
-            <option value={"Implemented"}>Implemented</option>
-            <option value={"Canceled"}>Canceled</option>
-        </select>
-        <br/>
+      <select selected value={"New"}
+        onChange={(event => setStatus(event.target.value))}>
+          <option value={"New"}>New</option>
+          <option value={"In Progress"}>In Progress</option>
+          <option value={"Test"}>Test</option>
+          <option value={"Implemented"}>Implemented</option>
+          <option value={"Canceled"}>Canceled</option>
+      </select>
+      <br/>
       <input type="submit" value="Submit project"/>
     </form>
   )
